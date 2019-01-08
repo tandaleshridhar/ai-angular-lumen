@@ -1,0 +1,33 @@
+<div class="container">
+<div class="row">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Sr.No.</td>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Mobile</td>
+      <td>Address</td>
+      <td width=275 align="center">Action</td>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let customer of customers; let i = index;">
+       <td>{{ i+1 }}</td>
+        <td>{{customer.first_name}}</td>
+        <td>{{customer.last_name}}</td>
+        <td>{{customer.mobile}}</td>
+        <td>{{customer.address}}</td>
+        <td width=275> 
+          <button type="button" class="btn btn-success" (click)="getNavigation('view',customer.user_id)">View</button>
+          <button type="button" class="btn btn-warning" (click)="getNavigation('update',customer.user_id)">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+     </tr>
+    
+  </tbody>
+ 
+</table>
+</div>
+
+</div>
