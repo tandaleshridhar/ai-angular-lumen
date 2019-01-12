@@ -10,6 +10,8 @@ declare var $;
 })
 export class CustomerListComponent implements OnInit {
   public customers: any = [];
+  displayedColumns: string[] = ['user_id', 'first_name', 'last_name', 'mobile', 'address'];
+  dataSource = this.customers;
   @ViewChild('customersTable') Table;
   public dataTable:any;
   constructor(private customerService:CustomerService, private router: Router) { }
@@ -22,8 +24,8 @@ export class CustomerListComponent implements OnInit {
     this.customerService.getCustomers().subscribe(
       customersData => {
         this.customers = customersData;
-        this.dataTable = $(this.Table.nativeElement);
-        setTimeout(()=>{this.dataTable.DataTable();});
+        // this.dataTable = $(this.Table.nativeElement);
+        // setTimeout(()=>{this.dataTable.DataTable();});
       }
     );
   }
