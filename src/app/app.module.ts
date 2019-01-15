@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoMaterialModule} from '../material-module';
-
+import {FlexLayoutModule} from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/pages/login/login.component';
@@ -39,14 +39,15 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
     SemenBuyerListComponent,
     NewSemenListComponent,
     SemenListComponent,
-    UserProfileComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,  
     AppRoutingModule,
     BrowserAnimationsModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    FlexLayoutModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

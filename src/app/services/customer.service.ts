@@ -6,7 +6,7 @@ import {} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CustomerService {
-  private url = 'http://localhost:8080/ai/php/customer/';
+  private url = 'http://localhost:8080/angular/ai/ai_api/customer/';
   constructor(private http:HttpClient) { }
 
   getCustomers(){

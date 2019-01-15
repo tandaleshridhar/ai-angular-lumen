@@ -10,9 +10,12 @@ declare var $;
 })
 export class CustomerListComponent implements OnInit {
   public customers: any = [];
-  displayedColumns: string[] = ['user_id', 'first_name', 'last_name', 'mobile', 'address'];
+  displayedColumns: string[] = ['user_id', 'first_name', 'last_name', 'mobile','details','update','delete'];
+
   dataSource = this.customers;
   @ViewChild('customersTable') Table;
+
+
   public dataTable:any;
   constructor(private customerService:CustomerService, private router: Router) { }
 
@@ -23,11 +26,25 @@ export class CustomerListComponent implements OnInit {
   loadCustomers(){
     this.customerService.getCustomers().subscribe(
       customersData => {
-        this.customers = customersData;
-        // this.dataTable = $(this.Table.nativeElement);
-        // setTimeout(()=>{this.dataTable.DataTable();});
+        this.customers = customersData;       
       }
     );
+  }
+
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  }
+
+  public redirectToDetails = (id: number) => {
+
+  }
+
+  public redirectToUpdate = (id: number) => {
+
+  }
+
+  public redirectToDelete = (id: number) => {
+
   }
 
   getNavigation(link,id){
