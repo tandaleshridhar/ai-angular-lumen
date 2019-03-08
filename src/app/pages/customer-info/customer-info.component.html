@@ -1,37 +1,36 @@
 <div class="new-customer-container">
-    <form class="example-form">
+    <form class="example-form" [formGroup]="customerForm" (ngSubmit)="saveCustomer(customerForm.value)">
       <mat-form-field class="example-full-width">
-        <input required matInput placeholder="First Name">
+        <input required matInput placeholder="First Name" formControlName="firstName">
       </mat-form-field>
       
       <mat-form-field class="example-full-width">
-        <input required matInput placeholder="Last Name">
+        <input required matInput placeholder="Last Name" formControlName="lastName">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input type="tel" matInput placeholder="पत्ता">
+        <input required matInput placeholder="गाव" formControlName="village">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input type="tel" matInput placeholder="पत्ता" formControlName="address">
       </mat-form-field>
   
-      <h4>जिल्हा</h4>
+      <h4>तालुका</h4>
       <mat-form-field>
-        <mat-select>
-          <mat-option>None</mat-option>
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2">Option 2</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
+        <mat-select formControlName="taluka">
+          <mat-option value="tasgaon">तासगाव</mat-option>
+          <mat-option value="palus">पलूस</mat-option>
+          <mat-option value="walwa">वाळवा</mat-option>
         </mat-select>
       </mat-form-field>
   
       <mat-form-field class="example-full-width">
-        <input required type="tel" matInput placeholder="मोबाइल नंबर">
-      </mat-form-field>
-  
-      <mat-form-field class="example-full-width">
-        <input type="tel" matInput placeholder="मोबाइल नंबर">
-      </mat-form-field>
+        <input required type="tel" matInput placeholder="मोबाइल नंबर" formControlName="mobile">
+      </mat-form-field>    
   
       <button mat-fab><mat-icon>trending_flat</mat-icon></button>
-      <button mat-fab class="clear-left"><mat-icon>cached</mat-icon></button>
+      <button mat-fab class="clear-left" [disabled]="!customerForm.valid"><mat-icon>cached</mat-icon></button>
     </form>
   </div>
   

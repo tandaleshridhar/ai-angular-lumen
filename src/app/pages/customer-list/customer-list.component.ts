@@ -8,6 +8,7 @@ declare var $;
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.sass']
 })
+
 export class CustomerListComponent implements OnInit {
   public customers: any = [];
   displayedColumns: string[] = ['user_id', 'first_name', 'last_name', 'mobile','details','update','delete'];

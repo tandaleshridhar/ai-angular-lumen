@@ -7,7 +7,7 @@ if($_POST)
   require '../config/database.php';
 
   try {
-    $query = "UPDATE users SET first_name=:first_name,last_name=:last_name,mobile=:mobile,address=:address WHERE user_id=:id";
+    $query = "UPDATE customers SET first_name=:first_name,last_name=:last_name,mobile=:mobile,address=:address WHERE customer_id=:id";
     $stmt = $con->prepare($query);
     $id=$_POST['id'];
     $first_name=$_POST['first_name'];

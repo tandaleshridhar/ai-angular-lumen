@@ -6,7 +6,7 @@ require '../config/database.php';
 
 try {
   $id = isset($_GET['id']) ? $_GET['id'] : die('Error:Record id not found');
-  $query = "DELETE FROM users where user_id = ?";
+  $query = "DELETE FROM customers where customer_id = ?";
   $stmt = $con->prepare($query);
   $stmt->bindParam(1,$id);
 

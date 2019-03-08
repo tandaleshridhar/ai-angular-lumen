@@ -7,7 +7,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : die('Error: Record id not found.');
 require '../config/database.php';
 
 try {
-  $query = "SELECT user_id,first_name,last_name,mobile,address FROM users WHERE user_id = ? LIMIT 0,1";
+  $query = "SELECT customer_id,first_name,last_name,mobile,address FROM customers WHERE user_id = ? LIMIT 0,1";
   $stmt = $con->prepare($query);
   $stmt->bindParam(1,$id);
   $stmt->execute();

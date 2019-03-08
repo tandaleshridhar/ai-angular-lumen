@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoMaterialModule} from '../material-module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/pages/login/login.component';
@@ -48,6 +49,8 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
     BrowserAnimationsModule,
     DemoMaterialModule,
     FlexLayoutModule, 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

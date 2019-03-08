@@ -6,7 +6,7 @@ if($_POST){
   require '../config/database.php';
 
   try {
-    $query = "INSERT INTO users SET first_name = :first_name, last_name = :last_name, mobile = :mobile, email = :email, address = :address, village = :village, taluka = :taluka, district = :district";
+    $query = "INSERT INTO customers SET first_name = :first_name, last_name = :last_name, mobile = :mobile, email = :email, address = :address, village = :village, taluka = :taluka, district = :district";
 
     $stmt = $con->prepare($query);
 
