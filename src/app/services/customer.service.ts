@@ -27,6 +27,6 @@ export class CustomerService {
   }
 
   deleteCustomer(id){
-    return this.http.get(this.url + 'delete.php?id=' + id);
+    return this.http.delete(this.url + 'delete.php?id=' + id);
   }
 }

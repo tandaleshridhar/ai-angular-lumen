@@ -1,31 +1,18 @@
 <div class="new-semen-container">    
-  <form class="example-form">
+  <form class="example-form" [formGroup]="semenForm" 
+  (ngSubmit)="saveSemen(semenForm.value)">
       <h3>नवीन सिमेन ब्रँड जतन करा</h3>
     <mat-form-field class="example-full-width">
-      <input required matInput placeholder="नाव">
+      <input matInput placeholder="नाव" formControlName="semenName" required>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input type="number" matInput placeholder="सुरुवातीची किंमत">
+      <input type="number" matInput placeholder="सुरुवातीची किंमत" formControlName="initialPrice" required>
     </mat-form-field>   
 
-    <button mat-fab><mat-icon>trending_flat</mat-icon></button>
+    <button mat-fab type="submit"><mat-icon>trending_flat</mat-icon></button>
     <button mat-fab class="clear-left"><mat-icon>cached</mat-icon></button>
     <br><br>  
     <h3>जतन केलेले सिमेन ब्रँड</h3>  
   </form>
 </div>
-<!--
-<div class="semen-list-container">
-  <table mat-table>
-    <tr mat-header-row>
-      <th mat-header-cell>नाव</th>
-      <th mat-header-cell>सुरुवातीची किंमत</th>
-    </tr>
-    <tr mat-header-row>
-      <td mat-cell></td>
-      <td mat-cell></td>
-    </tr>
-  </table>
-</div>
--->

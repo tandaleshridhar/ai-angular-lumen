@@ -11,7 +11,7 @@ try {
   $stmt->bindParam(1,$id);
 
   if($stmt->execute()){
-    echo json_encode(array('result'=>'success'));
+    echo json_encode(array('result'=>'success'));    
   }else{
     echo json_encode(array('result'=>'fail'));
   }

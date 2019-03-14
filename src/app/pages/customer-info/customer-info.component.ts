@@ -24,16 +24,16 @@ export class CustomerInfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveCustomer(values){
+  saveCustomer(value){
     const customerData = new FormData();
-    customerData.append('firstName',values.firstName);
-    customerData.append('lastName',values.lastName);
-    customerData.append('village',values.village);
-    customerData.append('address',values.address);
-    customerData.append('taluka',values.taluka);
-    customerData.append('mobile',values.mobile);
+    customerData.append('firstName',value.firstName);
+    customerData.append('lastName',value.lastName);
+    customerData.append('village',value.village);
+    customerData.append('address',value.address);
+    customerData.append('taluka',value.taluka);
+    customerData.append('mobile',value.mobile);
     this.custService.createCustomer(customerData).subscribe(result => {
-      this.router.navigate(['']);
-    })
+      this.router.navigate(['/customer-list']);      
+    })  
   }
 }

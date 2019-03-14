@@ -11,7 +11,7 @@ declare var $;
 
 export class CustomerListComponent implements OnInit {
   public customers: any = [];
-  displayedColumns: string[] = ['user_id', 'first_name', 'last_name', 'mobile','details','update','delete'];
+  displayedColumns: string[] = ['customer_id', 'first_name', 'last_name', 'mobile','details','update','delete'];
 
   dataSource = this.customers;
   @ViewChild('customersTable') Table;
@@ -37,15 +37,15 @@ export class CustomerListComponent implements OnInit {
   }
 
   public redirectToDetails = (id: number) => {
-
+    this.router.navigate(['/customer-info']);
   }
 
   public redirectToUpdate = (id: number) => {
-
+    this.router.navigate(['/customer-info']);
   }
 
   public redirectToDelete = (id: number) => {
-
+    this.customerService.deleteCustomer(id);
   }
 
   getNavigation(link,id){

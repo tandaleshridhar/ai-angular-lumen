@@ -1,19 +1,20 @@
 <div class="new-customer-container">
-    <form class="example-form" [formGroup]="customerForm" (ngSubmit)="saveCustomer(customerForm.value)">
+    <form class="example-form" [formGroup]="customerForm" 
+    (ngSubmit)="saveCustomer(customerForm.value)">
       <mat-form-field class="example-full-width">
-        <input required matInput placeholder="First Name" formControlName="firstName">
+        <input matInput placeholder="First Name" formControlName="firstName" required>
       </mat-form-field>
       
       <mat-form-field class="example-full-width">
-        <input required matInput placeholder="Last Name" formControlName="lastName">
+        <input matInput placeholder="Last Name" formControlName="lastName" required>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input required matInput placeholder="गाव" formControlName="village">
+        <input matInput placeholder="गाव" formControlName="village" required>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input type="tel" matInput placeholder="पत्ता" formControlName="address">
+        <input type="tel" matInput placeholder="पत्ता" formControlName="address" required>
       </mat-form-field>
   
       <h4>तालुका</h4>
@@ -26,10 +27,10 @@
       </mat-form-field>
   
       <mat-form-field class="example-full-width">
-        <input required type="tel" matInput placeholder="मोबाइल नंबर" formControlName="mobile">
+        <input type="tel" matInput placeholder="मोबाइल नंबर" formControlName="mobile" required>
       </mat-form-field>    
   
-      <button mat-fab><mat-icon>trending_flat</mat-icon></button>
+      <button mat-fab type="submit"><mat-icon>trending_flat</mat-icon></button>
       <button mat-fab class="clear-left" [disabled]="!customerForm.valid"><mat-icon>cached</mat-icon></button>
     </form>
   </div>
