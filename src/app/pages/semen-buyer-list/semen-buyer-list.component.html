@@ -3,10 +3,8 @@
         <mat-form-field>
             <h4>सिमेन ब्रँड</h4>
           <mat-select>
-            <mat-option>None</mat-option>
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2">Option 2</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
+            <mat-option>Select Semen</mat-option>
+            <mat-option *ngFor="let semenInfo of semen" value="semenInfo.id">{{semenInfo.semen_name}}</mat-option>          
           </mat-select>
         </mat-form-field>
       
@@ -38,7 +36,7 @@
         <input matInput placeholder="इतर खर्च">
       </mat-form-field>
 
-      <button mat-fab><mat-icon>trending_flat</mat-icon></button>
+      <button mat-fab type="submit"><mat-icon>trending_flat</mat-icon></button>
       <button mat-fab class="clear-left"><mat-icon>cached</mat-icon></button>
     </form>
   </div>

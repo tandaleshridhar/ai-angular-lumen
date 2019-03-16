@@ -1,10 +1,11 @@
 <div class="new-customer-container">
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input required matInput placeholder="जिल्हा">
-      </mat-form-field>
-  
-      <button mat-fab><mat-icon>trending_flat</mat-icon></button>
+    <form class="example-form" [formGroup]="districtForm" 
+    (ngSubmit)="saveDistrict(districtForm.value)">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="नाव" formControlName="districtName" required>
+    </mat-form-field>
+
+      <button mat-fab type="submit"><mat-icon>trending_flat</mat-icon></button>
       <button mat-fab class="clear-left"><mat-icon>cached</mat-icon></button>
     </form>
   </div>

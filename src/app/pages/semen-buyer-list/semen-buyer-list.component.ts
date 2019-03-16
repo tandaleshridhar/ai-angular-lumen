@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SemenBuyerService } from '../../services/semenbuyer.service';
 
 @Component({
   selector: 'app-semen-buyer-list',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SemenBuyerListComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private semenDetails:SemenBuyerService) { }
+  public semen: any = [];
   ngOnInit() {
+    this.getSemenDetails();
   }
 
+  getSemenDetails(){
+    this.semenDetails.getSemenBrand().subscribe(
+      semenData => {
+        this.semen = semenData;       
+      }
+    ); 
+  }
+
+ 
+ 
 }

@@ -37,8 +37,8 @@ if($_POST){
     if($stmt->execute()){
        echo json_encode(array('result'=>'success'));       
     }else{
-      //echo json_encode(array('result'=>'fail'));
-      echo json_encode($stmt->errorInfo());
+      echo json_encode(array('result'=>'fail'));
+      //echo json_encode($stmt->errorInfo());
     }
   } catch (PDOException $e) {
     die('Error:-'.$e->getMessage());
