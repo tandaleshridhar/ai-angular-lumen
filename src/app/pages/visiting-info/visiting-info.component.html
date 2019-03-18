@@ -1,3 +1,82 @@
-<p>
-  visiting-info works!
-</p>
+<div class="visit-container">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Customer Name" required>
+    </mat-form-field>
+    
+    <h5>गाय/म्हैस</h5>
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="tasgaon">गाय</mat-option>
+        <mat-option value="palus">म्हैस</mat-option>        
+      </mat-select>
+    </mat-form-field>
+
+    <h4>सिमेनचे नाव</h4>
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="ajay">Ajay</mat-option>
+        <mat-option value="palus">Vijay</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="टॅग नंबर">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="जनावराचे वर्णन">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="जनावराचे आरोग्य">
+    </mat-form-field>
+
+    फोटो:-<input type="file" name="image"><br><br>
+    रेकॉर्डिंग:-<input type="file" name="image"><br><br>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="हिट(२१ दिवस)">
+      <mat-checkbox>होय</mat-checkbox>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="P.D.दिनांक(७५ दिवस)">
+      <mat-checkbox>होय</mat-checkbox>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="डिलिव्हरी दिनांक">
+      <mat-checkbox>होय</mat-checkbox>
+    </mat-form-field>
+
+    <h4>रिपोर्ट</h4>
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="positive">+ve</mat-option>
+        <mat-option value="negative">-ve</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <h4>जन्मलेले जनावर</h4>
+    <mat-form-field>
+      <mat-select>
+        <mat-option value="positive">नर</mat-option>
+        <mat-option value="negative">मादी</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input type="number" matInput placeholder="फी रुपये">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input type="number" matInput placeholder="इतर फी रुपये">
+    </mat-form-field>
+
+    रिपीट(सकाळची / संध्याकाळी) <mat-checkbox>होय</mat-checkbox><br>
+
+    <button type="submit" mat-fab type="submit"><mat-icon>trending_flat</mat-icon></button>
+    <button mat-fab class="clear-left"><mat-icon>cached</mat-icon></button>
+  </form>
+</div>

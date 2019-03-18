@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 
 require '../config/database.php';
 
-$query = "SELECT id,name FROM district ORDER BY id ASC";
+$query = "SELECT id,semen_name,unit,initial_price FROM semen ORDER BY id DESC";
 $stmt = $con->prepare($query);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
