@@ -21,7 +21,7 @@ export class TehsilFormComponent implements OnInit {
    }
 
    ngOnInit() {
-     this.getDistrict();
+     this.getDistrict();     
    }
  
    getDistrict(){
@@ -34,7 +34,8 @@ export class TehsilFormComponent implements OnInit {
 
   saveTaluka(value){
     const talukaData = new FormData();
-    talukaData.append('district_id,talukaName', value.district_id, value.talukaName);
+    talukaData.append('district_id', value.district_id);
+    talukaData.append('talukaName', value.talukaName);
     this.taluka.addTaluka(talukaData).subscribe(result => {
       this.router.navigate(['/customer-info']);
     })

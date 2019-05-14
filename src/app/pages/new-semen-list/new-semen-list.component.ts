@@ -13,7 +13,8 @@ export class NewSemenListComponent implements OnInit {
   constructor(private fb:FormBuilder, private semenService:SemenService, private router:Router) { 
     this.semenForm = this.fb.group({
       semenName: ['', Validators.required],
-      initialPrice: ['', Validators.required]
+      initialPrice: ['', Validators.required],
+      description:['', Validators.required]
     });
   }
 
@@ -24,6 +25,7 @@ export class NewSemenListComponent implements OnInit {
     const semenData = new FormData();
     semenData.append('semenName',value.semenName);
     semenData.append('initialPrice',value.initialPrice);
+    semenData.append('description',value.description);
     this.semenService.addNewSemen(semenData).subscribe(result => {
       this.router.navigate(['/semen-buyer']);      
     }) 

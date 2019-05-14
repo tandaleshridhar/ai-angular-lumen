@@ -11,7 +11,7 @@ declare var $;
 
 export class CustomerListComponent implements OnInit {
   public customers: any = [];
-  displayedColumns: string[] = ['customer_id', 'first_name', 'last_name', 'mobile','details','update','delete'];
+  displayedColumns: string[] = ['id', 'first_name', 'last_name', 'mobile','details','update','delete'];
 
   dataSource = this.customers;
   @ViewChild('customersTable') Table;

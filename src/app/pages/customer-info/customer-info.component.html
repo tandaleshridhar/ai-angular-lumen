@@ -17,12 +17,21 @@
         <input type="tel" matInput placeholder="पत्ता" formControlName="address" required>
       </mat-form-field>
   
-      <h4>तालुका</h4>
+      <h5>तालुका</h5>
       <mat-form-field>
         <mat-select formControlName="taluka">
           <mat-option value="tasgaon">तासगाव</mat-option>
           <mat-option value="palus">पलूस</mat-option>
           <mat-option value="walwa">वाळवा</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <h5>जिल्हा</h5>
+      <mat-form-field>
+        <mat-select formControlName="district">
+          <mat-option value="tasgaon">सांगली</mat-option>
+          <mat-option value="palus">सातारा</mat-option>
+          <mat-option value="walwa">कोल्हापूर</mat-option>
         </mat-select>
       </mat-form-field>
   

@@ -1,3 +1,60 @@
-<p>
-  reports works!
-</p>
+<div class="report-container">
+  <form class="report-form">
+    <div class="report-box1">
+      <h4 class="animalType">जनावराच्या प्रकारानुसार</h4>
+      <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option>food1</mat-option>
+          <mat-option>food2</mat-option>
+        </mat-select>
+      </mat-form-field>&nbsp;&nbsp;   
+      <button mat-flat-button color="accent">Submit</button>
+    </div>
+      <div class="report-box2">
+        <h4 class="datewise">दिनांकानुसार रिपोर्ट </h4>&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field> &nbsp;&nbsp;   
+        <button mat-flat-button color="accent">Submit</button>
+    </div> 
+    <div class="report-box3">
+      <h4>ग्राहकाच्या  नावानुसार  रिपोर्ट</h4>&nbsp;&nbsp;
+      <mat-form-field>
+        <mat-label>client name</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let customerInfo of customers" [value]="customerInfo.value">
+              {{customerInfo.first_name + ' ' + customerInfo.last_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>&nbsp;&nbsp;
+      <button mat-flat-button color="accent">Submit</button>
+    </div> 
+    <div class="report-box4">
+      <h4>दिनांकानुसार +ve/-ve रिपोर्ट </h4>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker3" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+      </mat-form-field>&nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker4" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+        <mat-datepicker #picker4></mat-datepicker>
+      </mat-form-field> &nbsp;&nbsp;   
+      <button mat-flat-button color="accent">Submit</button>
+    </div>
+    <div class="report-box5">
+        <h4>नफा /तोटा </h4>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-flat-button color="primary">Submit</button>
+    </div>
+  </form>
+</div>
+
