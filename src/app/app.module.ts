@@ -22,6 +22,7 @@ import { SemenBuyerListComponent } from './pages/semen-buyer-list/semen-buyer-li
 import { NewSemenListComponent } from './pages/new-semen-list/new-semen-list.component';
 import { SemenListComponent } from './pages/semen-list/semen-list.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { FileSelectDirective} from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
     SemenInfoComponent,
     VisitingInfoComponent,
     ReportsComponent,
+    FileSelectDirective,
     NewUserComponent,
     DistrictFormComponent,
     TehsilFormComponent,
@@ -51,7 +53,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
     FlexLayoutModule, 
     FormsModule,
     ReactiveFormsModule
-  ],
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

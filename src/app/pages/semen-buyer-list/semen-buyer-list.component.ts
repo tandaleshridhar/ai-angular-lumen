@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SemenBuyerService } from '../../services/semenbuyer.service';
+import { Router } from '@angular/router';
+import { parseHostBindings } from '@angular/compiler';
 
 @Component({
   selector: 'app-semen-buyer-list',
@@ -7,11 +9,27 @@ import { SemenBuyerService } from '../../services/semenbuyer.service';
   styleUrls: ['./semen-buyer-list.component.sass']
 })
 export class SemenBuyerListComponent implements OnInit {
+ 
+  constructor(private semenDetails:SemenBuyerService, private router:Router) { 
+  }
 
-  constructor(private semenDetails:SemenBuyerService) { }
   public semen: any = [];
+  selected = "";
+  balance;
+  initialPrice;
+  unitsTaken;
+  productid;
+  totalCost;
+  totalQuantity;
+  otherExpenses;
+
   ngOnInit() {
     this.getSemenDetails();
+  }
+
+  ngDoCheck(): void {
+    this.totalQuantity = parseInt(this.balance) + parseInt(this.unitsTaken);
+    this.totalCost = this.unitsTaken * this.initialPrice;
   }
 
   getSemenDetails(){
@@ -22,6 +40,23 @@ export class SemenBuyerListComponent implements OnInit {
     ); 
   }
 
- 
+  onValueChange(event, value) {
+    this.productid = event.id;
+    this.initialPrice = event.initial_price;    
+  }
+
+  buySemen(){
+    let req = {
+      semenInfo: this.productid,
+      balance: this.balance,
+      initialPrice: this.initialPrice,
+      totalCost: this.totalCost,
+      totalQuantity: this.totalQuantity,
+      otherExpenses: this.otherExpenses      
+    }
+    this.semenDetails.buySemen(req).subscribe(result => {
+         this.router.navigate(['/customer-list']);      
+    })  
+  }
  
 }

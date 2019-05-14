@@ -18,7 +18,7 @@ import { VisitingInfoComponent } from '../app/pages/visiting-info/visiting-info.
 import { UserProfileComponent } from '../app/pages/user-profile/user-profile.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: '**', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },

@@ -17,6 +17,7 @@ export class CustomerInfoComponent implements OnInit {
       village: ['', Validators.required],
       address: ['', Validators.required],
       taluka: ['', Validators.required],
+      district: ['', Validators.required],
       mobile: ['', Validators.required]
     });
    }
@@ -31,6 +32,7 @@ export class CustomerInfoComponent implements OnInit {
     customerData.append('village',value.village);
     customerData.append('address',value.address);
     customerData.append('taluka',value.taluka);
+    customerData.append('district',value.district);
     customerData.append('mobile',value.mobile);
     this.custService.createCustomer(customerData).subscribe(result => {
       this.router.navigate(['/customer-list']);      

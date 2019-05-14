@@ -1,9 +1,9 @@
-<div class="new-customer-container">
+<div class="taluka-container">
     <form class="example-form" [formGroup]="talukaForm" 
     (ngSubmit)="saveTaluka(talukaForm.value)">
         <h4>जिल्हा</h4>
         <mat-form-field>
-          <mat-select name="district_id">
+          <mat-select formControlName="district_id">
             <mat-option>None</mat-option>
             <mat-option *ngFor="let district of districts" value="district.id">{{district.name}}</mat-option>
           </mat-select>
