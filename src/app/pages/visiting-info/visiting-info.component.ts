@@ -66,19 +66,19 @@ export class VisitingInfoComponent implements OnInit {
   }
 
   
-  onValueChange1(event, value) {
-    
-    this.customerName = event.first_name;
+  onValueChange1(event, value) {    
+    this.customerName = event.first_name + ' ' + event.last_name;
     this.customerId = event.id;        
   }
 
   onValueChange2(event, value) {
-    this.animalId = event;        
+    this.animalName = event.name;
+    this.animalId = event.id;        
   }
 
   onValueChange3(event, value) {
     this.semenName = event.name; 
-    this.semenId = event;        
+    this.semenId = event.id;        
   }
 
   getSemenBrand(){
@@ -128,9 +128,9 @@ export class VisitingInfoComponent implements OnInit {
     animalDesc: this.desc,
     animalHealth: this.health,
     semenName: this.semenName,
-    hitDate: this.hitDate,
-    deliveryDate: this.deliveryDate,
-    pdDate: this.pdDate,
+    // hitDate: this.hitDate,
+    // deliveryDate: this.deliveryDate,
+    // pdDate: this.pdDate,
     birthGender: this.birthGender,
     fee: this.fee,
     otherFee: this.otherFee

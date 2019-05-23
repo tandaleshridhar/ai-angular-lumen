@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DistrictService {
-  //private url = 'http://localhost:8080/angular/ai/ai_api/district/';
   private url = 'http://localhost:8080/lumenapi/v1/district';
+  //private url = 'http://dnyandeep.net/lumenapi/v1/';
 
   constructor(private http:HttpClient) { }
 

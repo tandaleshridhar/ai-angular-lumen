@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class ImageService {
   public url = 'http://localhost:8080/lumenapi/v1/img';
+  //private url = 'http://dnyandeep.net/lumenapi/v1/';
 
   constructor(private http:HttpClient) { }
 

@@ -1,60 +1,126 @@
 <div class="report-container">
-  <form class="report-form">
-    <div class="report-box1">
-      <h4 class="animalType">जनावराच्या प्रकारानुसार</h4>
-      <mat-form-field>
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option>food1</mat-option>
-          <mat-option>food2</mat-option>
-        </mat-select>
-      </mat-form-field>&nbsp;&nbsp;   
-      <button mat-flat-button color="accent">Submit</button>
-    </div>
-      <div class="report-box2">
-        <h4 class="datewise">दिनांकानुसार रिपोर्ट </h4>&nbsp;&nbsp;
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>दिनांकानुसार रिपोर्ट </ng-template><br>
+        <h4>दिनांकानुसार रिपोर्ट </h4>
         <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>&nbsp;&nbsp;
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker" required></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker1" required></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        <div>
+          <button type= "submit" mat-button>Submit</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>जनावरांच्या प्रकारानुसार रिपोर्ट
+        </ng-template><br>
+        <h4>जनावरांच्या प्रकारानुसार रिपोर्ट</h4>
         <mat-form-field>
-          <input matInput [matDatepicker]="picker1" placeholder="Choose a date">
-          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-          <mat-datepicker #picker1></mat-datepicker>
-        </mat-form-field> &nbsp;&nbsp;   
-        <button mat-flat-button color="accent">Submit</button>
-    </div> 
-    <div class="report-box3">
-      <h4>ग्राहकाच्या  नावानुसार  रिपोर्ट</h4>&nbsp;&nbsp;
-      <mat-form-field>
-        <mat-label>client name</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let customerInfo of customers" [value]="customerInfo.value">
-              {{customerInfo.first_name + ' ' + customerInfo.last_name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>&nbsp;&nbsp;
-      <button mat-flat-button color="accent">Submit</button>
-    </div> 
-    <div class="report-box4">
-      <h4>दिनांकानुसार +ve/-ve रिपोर्ट </h4>
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker3" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-        <mat-datepicker #picker3></mat-datepicker>
-      </mat-form-field>&nbsp;&nbsp;
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker4" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
-        <mat-datepicker #picker4></mat-datepicker>
-      </mat-form-field> &nbsp;&nbsp;   
-      <button mat-flat-button color="accent">Submit</button>
-    </div>
-    <div class="report-box5">
-        <h4>नफा /तोटा </h4>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button mat-flat-button color="primary">Submit</button>
-    </div>
-  </form>
+          <mat-label>जनावरांचे प्रकार </mat-label>
+          <mat-select>
+            <mat-option>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperSubmit>Submit</button>
+        </div>
+      </form>
+    </mat-step>
+    
+      <mat-step>
+      <form>
+      <ng-template matStepLabel>ग्राहकाच्या नावानुसार  रिपोर्ट</ng-template><br>
+          <h4>ग्राहकाचे  नाव </h4>
+          <mat-form-field>
+            <mat-select [ngModel]="selectedCust" (ngModelChange)="onValueChange1($event, selectedCust)" name="customerName">
+              <mat-option>Select Customer</mat-option>
+              <mat-option *ngFor="let customerInfo of customers"
+              [value]="customerInfo">
+                {{customerInfo.first_name + ' ' + customerInfo.last_name}}</mat-option>   
+            </mat-select>
+          </mat-form-field>
+      <div>
+        <button mat-button matStepperSubmit (click)="onCustomerClick(selectedCustomer)">Submit</button>
+      </div>
+      </form>
+    </mat-step>
+
+    <mat-step >
+      <form >
+        <ng-template matStepLabel>दिनांकानुसार +ve/-ve रिपोर्ट </ng-template><br>
+        <h4>दिनांकानुसार +ve/-ve रिपोर्ट</h4>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>&nbsp;&nbsp;&nbsp;
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker3" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+        <div>
+          <button mat-button matStepperSubmit>submit</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+
+<div class="visitreport1">
+  <table mat-table [dataSource]="visitsCustomer">
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> <strong>Id</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="customer_name">
+      <th mat-header-cell *matHeaderCellDef><strong>Customer Name</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.customer_name}} </td>
+    </ng-container>
+
+    <!-- balance  Column -->
+    <ng-container matColumnDef="animal_type">
+      <th mat-header-cell *matHeaderCellDef><strong>Animal Type</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.animal_type}} </td>
+    </ng-container>    
+
+    <ng-container matColumnDef="semen_name">
+          <th mat-header-cell *matHeaderCellDef> <strong>Semen Name</strong> </th>
+          <td mat-cell *matCellDef="let element"> {{element.semen_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="birth_gender">
+      <th mat-header-cell *matHeaderCellDef> <strong>Birth Gender</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.birth_gender}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fee">
+      <th mat-header-cell *matHeaderCellDef> <strong>Fee</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.fee}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+      <th mat-header-cell *matHeaderCellDef> <strong>Visit Date</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.created_at}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displaycolumdetails; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displaycolumdetails;"></tr>
+  </table>
 </div>
 

@@ -1,3 +1,29 @@
-<p>
-  semen-info works!
-</p>
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="semenbuyers">
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> <strong>Id</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef><strong> Price</strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <!-- balance  Column -->
+    <ng-container matColumnDef="balance">
+      <th mat-header-cell *matHeaderCellDef><strong>Balance </strong> </th>
+      <td mat-cell *matCellDef="let element"> {{element.balance}} </td>
+    </ng-container>    
+
+    <ng-container matColumnDef="total_quantity">
+          <th mat-header-cell *matHeaderCellDef> <strong>Total Quantity</strong> </th>
+          <td mat-cell *matCellDef="let element"> {{element.total_quantity}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displaycolumdetails; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displaycolumdetails;"></tr>
+  </table>
+</div>

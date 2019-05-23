@@ -32,11 +32,11 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput name="desc" placeholder="जनावराचे वर्णन">
+      <input matInput name="desc" placeholder="जनावराचे वर्णन" [(ngModel)]="desc">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput name="health" placeholder="जनावराचे आरोग्य">
+      <input matInput name="health" placeholder="जनावराचे आरोग्य" [(ngModel)]="health">
     </mat-form-field>
 
     <div class="example-full-width">
@@ -69,7 +69,7 @@
 
     <h5>रिपोर्ट</h5>
     <mat-form-field>
-      <mat-select name="report">
+      <mat-select name="report" [(ngModel)]="report">
         <mat-option value="positive">+ve</mat-option>
         <mat-option value="negative">-ve</mat-option>
       </mat-select>
@@ -77,18 +77,18 @@
 
     <h5>जन्मलेले जनावर</h5>
     <mat-form-field>
-      <mat-select name="birthGender">
+      <mat-select name="birthGender" [(ngModel)]="birthGender">
         <mat-option value="positive">नर</mat-option>
         <mat-option value="negative">मादी</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input type="number" matInput name="fee" placeholder="फी रुपये">
+      <input type="number" matInput name="fee" [(ngModel)]="fee" placeholder="फी रुपये">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input type="number" matInput name="otherFee" placeholder="इतर फी रुपये">
+      <input type="number" matInput name="otherFee" [(ngModel)]="otherFee"  placeholder="इतर फी रुपये">
     </mat-form-field>
 
     रिपीट(सकाळची / संध्याकाळी) <mat-checkbox>होय</mat-checkbox><br>

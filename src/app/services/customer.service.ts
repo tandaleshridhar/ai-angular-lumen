@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CustomerService {
-  //private url = 'http://localhost:8080/angular/ai/ai_api/customer/';
   private url = 'http://localhost:8080/lumenapi/v1/';
+  //private url = 'http://dnyandeep.net/lumenapi/v1/';
 
   constructor(private http:HttpClient) { }
 
