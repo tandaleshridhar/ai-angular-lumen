@@ -1,0 +1,20 @@
+<div class="taluka-container">
+    <form class="example-form" [formGroup]="talukaForm" 
+    (ngSubmit)="saveTaluka(talukaForm.value)">
+        <h4>जिल्हा</h4>
+        <mat-form-field>
+          <mat-select formControlName="district_id">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let district of districts" value="district.id">{{district.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input required matInput formControlName="talukaName" placeholder="तालुका">
+      </mat-form-field>
+  
+      <button type="submit" mat-fab><mat-icon>trending_flat</mat-icon></button>
+      <button mat-fab class="clear-left"><mat-icon>cached</mat-icon></button>
+    </form>
+  </div>
+  

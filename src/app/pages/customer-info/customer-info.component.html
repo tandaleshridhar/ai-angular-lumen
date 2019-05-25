@@ -1,0 +1,46 @@
+<div class="new-customer-container">
+    <form class="example-form" [formGroup]="customerForm" 
+    (ngSubmit)="saveCustomer(customerForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="First Name" formControlName="firstName" required>
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last Name" formControlName="lastName" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="गाव" formControlName="village" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input type="tel" matInput placeholder="पत्ता" formControlName="address" required>
+      </mat-form-field>
+  
+      <h5>तालुका</h5>
+      <mat-form-field>
+        <mat-select formControlName="taluka">
+          <mat-option value="tasgaon">तासगाव</mat-option>
+          <mat-option value="palus">पलूस</mat-option>
+          <mat-option value="walwa">वाळवा</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <h5>जिल्हा</h5>
+      <mat-form-field>
+        <mat-select formControlName="district">
+          <mat-option value="tasgaon">सांगली</mat-option>
+          <mat-option value="palus">सातारा</mat-option>
+          <mat-option value="walwa">कोल्हापूर</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <input type="tel" matInput placeholder="मोबाइल नंबर" formControlName="mobile" required>
+      </mat-form-field>    
+  
+      <button mat-fab type="submit"><mat-icon>trending_flat</mat-icon></button>
+      <button mat-fab class="clear-left" [disabled]="!customerForm.valid"><mat-icon>cached</mat-icon></button>
+    </form>
+  </div>
+  

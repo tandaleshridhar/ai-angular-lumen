@@ -1,0 +1,43 @@
+<div class="semen-buyer-container">
+    <form class="example-form">
+        <mat-form-field>
+            <h4>सिमेन ब्रँड</h4>
+          <mat-select [ngModel]="selected" (ngModelChange)="onValueChange($event, selected)" name="semenInfo">
+            <mat-option>Select Semen</mat-option>
+            <mat-option *ngFor="let semenInfo of semen" [value]="semenInfo">
+              {{semenInfo.name}}</mat-option>          
+          </mat-select>
+        </mat-form-field>
+      
+      <mat-form-field class="example-full-width">        
+        <input disabled matInput placeholder="नग">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="सुरुवातीची शिल्लक" [(ngModel)]="balance" name="balance">
+      </mat-form-field>      
+  
+      <mat-form-field class="example-full-width">
+        <input required matInput placeholder="घेतलेले नग" [(ngModel)]="unitsTaken" name="unitsTaken">
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="प्रत्येकी किंमत" [(ngModel)]="initialPrice" name="initialPrice">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <input disabled matInput placeholder="एकूण रक्कम" [(ngModel)]="totalCost" name="totalCost">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="एकूण नग" [(ngModel)]="totalQuantity" name="totalQuantity">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="इतर खर्च" name="otherExpenses" [(ngModel)]="otherExpenses">
+      </mat-form-field>
+
+      <button mat-fab type="submit" (click) = "buySemen()"><mat-icon>trending_flat</mat-icon></button>
+      <button mat-fab class="clear-left"><mat-icon>cached</mat-icon></button>
+    </form>
+  </div>
+  

@@ -1,0 +1,100 @@
+<div class="visit-container">
+  <form class="example-form" enctype="multipart/form-data">
+
+    <mat-form-field class="example-full-width">
+      <mat-select [ngModel]="selectedCust" (ngModelChange)="onValueChange1($event, selectedCust)" name="customerName">
+        <mat-option>Select Customer</mat-option>
+        <mat-option *ngFor="let customerInfo of customers" [value]="customerInfo">
+          {{customerInfo.first_name + ' ' + customerInfo.last_name}}</mat-option>   
+      </mat-select>
+    </mat-form-field>
+    
+    <h5>गाय/म्हैस</h5>
+    <mat-form-field>      
+      <mat-select [ngModel]="selectedAnimal" (ngModelChange)="onValueChange2($event, selectedAnimal)" name="animalName">
+        <mat-option>Select Animal</mat-option>
+        <mat-option *ngFor="let animalInfo of animals" [value]="animalInfo">
+          {{animalInfo.name }}</mat-option>        
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <h5>सिमेनचे नाव</h5>
+    <mat-form-field>        
+      <mat-select [ngModel]="selectedSemen" (ngModelChange)="onValueChange3($event, selectedSemen)" name="semenName">
+        <mat-option>Select Animal</mat-option>
+        <mat-option *ngFor="let semenInfo of semens" [value]="semenInfo">
+          {{ semenInfo.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput name="tag" placeholder="टॅग नंबर" [(ngModel)]="tag">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput name="desc" placeholder="जनावराचे वर्णन" [(ngModel)]="desc">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput name="health" placeholder="जनावराचे आरोग्य" [(ngModel)]="health">
+    </mat-form-field>
+
+    <div class="example-full-width">
+    फोटो:- <input type="file" name="avatar" ng2FileSelect [uploader]="uploader"     style="padding-left:20px;" />
+    <button type="button"  (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Upload</button>
+    </div><br>     
+
+    <div class="example-full-width">
+      रेकॉर्डिंग:- <input type="file" name="recording" ng2FileSelect 
+      [uploader]="uploader1" style="padding-left:20px;" />
+      <button type="button"  (click)="uploader1.uploadAll()" [disabled]="!uploader1.getNotUploadedItems().length">Upload</button>
+    </div>  
+
+    हिट (२१ दिवस) <mat-form-field>
+      <input matInput name="hitDate" [(ngModel)]="hitDate">
+    </mat-form-field>&nbsp;&nbsp;
+    <mat-checkbox (change)="add21Days()">होय</mat-checkbox><br>
+
+    P.D.दिनांक (७५ दिवस)
+    <mat-form-field>
+      <input matInput name="pdDate" name="pdDate" [(ngModel)]="pdDate">
+    </mat-form-field>&nbsp;&nbsp;
+    <mat-checkbox (change)="add75Days()">होय</mat-checkbox><br>
+
+    डिलिव्हरी दिनांक 
+    <mat-form-field>
+      <input matInput name="deliveryDate" name="deliveryDate" [(ngModel)]="deliveryDate">
+    </mat-form-field>&nbsp;&nbsp;
+    <mat-checkbox (change)="add9Month()">होय</mat-checkbox><br>
+
+    <h5>रिपोर्ट</h5>
+    <mat-form-field>
+      <mat-select name="report" [(ngModel)]="report">
+        <mat-option value="positive">+ve</mat-option>
+        <mat-option value="negative">-ve</mat-option>
+      </mat-select>
+    </mat-form-field><br>
+
+    <h5>जन्मलेले जनावर</h5>
+    <mat-form-field>
+      <mat-select name="birthGender" [(ngModel)]="birthGender">
+        <mat-option value="positive">नर</mat-option>
+        <mat-option value="negative">मादी</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input type="number" matInput name="fee" [(ngModel)]="fee" placeholder="फी रुपये">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input type="number" matInput name="otherFee" [(ngModel)]="otherFee"  placeholder="इतर फी रुपये">
+    </mat-form-field>
+
+    रिपीट(सकाळची / संध्याकाळी) <mat-checkbox>होय</mat-checkbox><br>
+
+    <button mat-fab type="submit"  (click)="saveVisit()">
+      <mat-icon>trending_flat</mat-icon></button>
+    <button mat-fab class="clear-left"><mat-icon>cached</mat-icon></button>
+  </form>
+</div>
